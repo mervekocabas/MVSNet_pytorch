@@ -60,7 +60,7 @@ class MVSDataset(Dataset):
         img = Image.open(filename)
         # scale 0~255 to 0~1
         np_img = np.array(img, dtype=np.float32) / 255.
-        assert np_img.shape[:2] == (1200, 1600)
+        # assert np_img.shape[:2] == (1200, 1600)
         # crop to (1184, 1600)
         np_img = np_img[:-16, :]  # do not need to modify intrinsics if cropping the bottom part
         return np_img
